@@ -5,16 +5,17 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+  import { mapGetters } from 'vuex'
 
-export default {
-  name: 'Dashboard',
+  export default {
+  //name: 'Dashboard',
+  name: 'TESTDashboard',
   computed: {
-    ...mapGetters([
-      'name'
-    ])
+  ...mapGetters([
+  'name'
+  ])
   }
-}
+  }
 </script>
 
 <style lang="scss" scoped>

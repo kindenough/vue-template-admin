@@ -42,11 +42,38 @@ export const constantRoutes = [
     component: () => import('@/views/404'),
     hidden: true
   },
-
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '/map',
+    meta: { title: '地图', icon: 'example' },
+    children: [
+      {
+        path: 'map',
+        component: () => import('@/views/map/index'),
+        meta: { title: '天地图1' }
+      },
+      {
+        path: 'openlayer',
+        component: () => import('@/views/map/openlayer'),
+        meta: { title: 'openlayer' }
+      },
+      {
+        path: 'google1',
+        component: () => import('@/views/map/google1'),
+        meta: { title: 'google地图' }
+      },
+      {
+        path: 'google2',
+        component: () => import('@/views/map/google2'),
+        meta: { title: 'google卫星' }
+      }
+    ]
+  },
+  {
+    path: '/dashboard',
+    component: Layout,
+    // redirect: '/dashboard',
     children: [{
       path: 'dashboard',
       name: 'Dashboard',
