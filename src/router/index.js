@@ -43,6 +43,17 @@ export const constantRoutes = [
     hidden: true
   },
   {
+    path: '/dashboard',
+    component: Layout,
+    // redirect: '/dashboard',
+    children: [{
+      path: 'dashboard',
+      name: 'Dashboard',
+      component: () => import('@/views/dashboard/index'),
+      meta: { title: '主页', icon: 'dashboard' }
+    }]
+  },
+  {
     path: '/',
     component: Layout,
     redirect: '/map',
@@ -67,19 +78,13 @@ export const constantRoutes = [
         path: 'google2',
         component: () => import('@/views/map/google2'),
         meta: { title: 'google卫星' }
+      },
+      {
+        path: 'twoMaps',
+        component: () => import('@/views/map/twoMaps'),
+        meta: { title: '双屏' }
       }
     ]
-  },
-  {
-    path: '/dashboard',
-    component: Layout,
-    // redirect: '/dashboard',
-    children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
-    }]
   },
 
   {
